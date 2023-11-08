@@ -28,7 +28,7 @@ public class EnemyAI : Movement
     public void RandomDirection()
     {
         CancelInvoke("RandomDirection");
-        Direction selection = direction[Random.Range(0,5)];
+        Direction selection = direction[Random.Range(0,4)];
         if (selection == Direction.Up)
         {
             v = 1;
