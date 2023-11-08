@@ -1,23 +1,23 @@
 Using pre-set license
-Built from '2022.3/staging' branch; Version is '2022.3.7f1 (b16b3b16c7a0) revision 11627323'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'fi' Physical Memory: 7069 MB
+Built from '2023.1/staging' branch; Version is '2023.1.5f1 (9dce81d9e7e0) revision 10342017'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'fi' Physical Memory: 16237 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.3.7f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2023.1.5f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/Käyttäjä/Documents/GitHub/PortfolioProject1/BattleCity
+C:/Users/immir/OneDrive/Tiedostot/GitHub/PortfolioProject1/BattleCity
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-59555
-Successfully changed project path to: C:/Users/Käyttäjä/Documents/GitHub/PortfolioProject1/BattleCity
-C:/Users/Käyttäjä/Documents/GitHub/PortfolioProject1/BattleCity
+50469
+Successfully changed project path to: C:/Users/immir/OneDrive/Tiedostot/GitHub/PortfolioProject1/BattleCity
+C:/Users/immir/OneDrive/Tiedostot/GitHub/PortfolioProject1/BattleCity
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,158 +49,183 @@ C:/Users/Käyttäjä/Documents/GitHub/PortfolioProject1/BattleCity
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [5400] Host "[IP] 10.81.210.211 [Port] 0 [Flags] 2 [Guid] 1874020297 [EditorId] 1874020297 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-9HF9FVE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [17688] Host "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 1631895838 [EditorId] 1631895838 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-1OUDA1M) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [5400] Host "[IP] 10.81.210.211 [Port] 0 [Flags] 2 [Guid] 1874020297 [EditorId] 1874020297 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-9HF9FVE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [17688] Host "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 1631895838 [EditorId] 1631895838 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-1OUDA1M) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Default GameObject BitMask: Water already registered
-Refreshing native plugins compatible for Editor in 60.05 ms, found 4 plugins.
+Library Redirect Path: Library/Default GameObject BitMask: Water already registered
+Refreshing native plugins compatible for Editor in 17.25 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2022.3.7f1 (b16b3b16c7a0)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Käyttäjä/Documents/GitHub/PortfolioProject1/BattleCity/Assets
+Initialize engine version: 2023.1.5f1 (9dce81d9e7e0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2023.1.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/immir/OneDrive/Tiedostot/GitHub/PortfolioProject1/BattleCity/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: AMD Radeon(TM) Vega 8 Mobile Graphics (ID=0x15dd)
-    Vendor:   ATI
-    VRAM:     3534 MB
-    Driver:   23.20.815.6144
+    Renderer: NVIDIA GeForce RTX 3060 Ti (ID=0x2486)
+    Vendor:   NVIDIA
+    VRAM:     8038 MB
+    Driver:   31.0.15.3623
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56364
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2023.1.5f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2023.1.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2023.1.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56116
 Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.053197 seconds.
-- Loaded All Assemblies, in  1.513 seconds
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2023.1.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004724 seconds.
+- Loaded All Assemblies, in  0.490 seconds
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.928 seconds
-Domain Reload Profiling: 2432ms
-	BeginReloadAssembly (586ms)
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+- Finished resetting the current domain, in  0.363 seconds
+Domain Reload Profiling: 850ms
+	BeginReloadAssembly (161ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (129ms)
-	RebuildNativeTypeToScriptingClass (36ms)
-	initialDomainReloadingComplete (230ms)
-	LoadAllAssembliesAndSetupDomain (522ms)
-		LoadAssemblies (568ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (66ms)
+	LoadAllAssembliesAndSetupDomain (196ms)
+		LoadAssemblies (157ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (515ms)
-			TypeCache.Refresh (510ms)
-				TypeCache.ScanAssembly (469ms)
+		AnalyzeDomain (190ms)
+			TypeCache.Refresh (188ms)
+				TypeCache.ScanAssembly (172ms)
 			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (2ms)
-	FinalizeReload (930ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (364ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (727ms)
+		SetupLoadedEditorAssemblies (306ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (43ms)
-			SetLoadedEditorAssemblies (18ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (9ms)
-			ProcessInitializeOnLoadAttributes (477ms)
-			ProcessInitializeOnLoadMethodAttributes (180ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (8ms)
+			ProcessInitializeOnLoadAttributes (202ms)
+			ProcessInitializeOnLoadMethodAttributes (77ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (0ms)
 ========================================================================
 Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Käyttäjä\Documents\GitHub\PortfolioProject1\BattleCity\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Käyttäjä\Documents\GitHub\PortfolioProject1\BattleCity\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  3.060 seconds
-Refreshing native plugins compatible for Editor in 32.88 ms, found 4 plugins.
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image C:\Users\immir\OneDrive\Tiedostot\GitHub\PortfolioProject1\BattleCity\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\immir\OneDrive\Tiedostot\GitHub\PortfolioProject1\BattleCity\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.184 seconds
+Refreshing native plugins compatible for Editor in 5.54 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.998 seconds
-Domain Reload Profiling: 5032ms
-	BeginReloadAssembly (566ms)
+- Finished resetting the current domain, in  0.783 seconds
+Domain Reload Profiling: 1961ms
+	BeginReloadAssembly (361ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (18ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (69ms)
-	RebuildCommonClasses (142ms)
-	RebuildNativeTypeToScriptingClass (54ms)
-	initialDomainReloadingComplete (200ms)
-	LoadAllAssembliesAndSetupDomain (2071ms)
-		LoadAssemblies (1718ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (51ms)
+	LoadAllAssembliesAndSetupDomain (707ms)
+		LoadAssemblies (433ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (701ms)
-			TypeCache.Refresh (576ms)
-				TypeCache.ScanAssembly (521ms)
-			ScanForSourceGeneratedMonoScriptInfo (98ms)
-			ResolveRequiredComponents (21ms)
-	FinalizeReload (1999ms)
+		AnalyzeDomain (390ms)
+			TypeCache.Refresh (360ms)
+				TypeCache.ScanAssembly (345ms)
+			ScanForSourceGeneratedMonoScriptInfo (24ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (783ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1421ms)
+		SetupLoadedEditorAssemblies (522ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (32ms)
-			SetLoadedEditorAssemblies (14ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (285ms)
-			ProcessInitializeOnLoadAttributes (924ms)
-			ProcessInitializeOnLoadMethodAttributes (127ms)
-			AfterProcessingInitializeOnLoad (39ms)
-			EditorAssembliesLoaded (1ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (114ms)
+			ProcessInitializeOnLoadAttributes (348ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (33ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
 Default GameObject BitMask: Water already registered
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.19 seconds
-Refreshing native plugins compatible for Editor in 24.70 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 6.82 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4000 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 69 unused Assets / (244.5 KB). Loaded Objects now: 4456.
-Memory consumption went from 136.1 MB to 135.8 MB.
-Total: 15.483400 ms (FindLiveObjects: 0.735600 ms CreateObjectMapping: 0.324000 ms MarkObjects: 13.902700 ms  DeleteObjects: 0.518100 ms)
+Unloading 4081 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 63 unused Assets / (57.1 KB). Loaded Objects now: 4622.
+Memory consumption went from 146.7 MB to 146.7 MB.
+Total: 5.344400 ms (FindLiveObjects: 0.292300 ms CreateObjectMapping: 0.158600 ms MarkObjects: 4.768100 ms  DeleteObjects: 0.124200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 620058.582527 seconds.
+  Time since last request: 489691.981017 seconds.
   path: Assets/Palette.prefab
-  artifactKey: Guid(b2e3c0035580bfb4da5393db2228a782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette.prefab using Guid(b2e3c0035580bfb4da5393db2228a782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '235d9d750dcabc00fe84128c15fbeeab') in 0.333982 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 46.422022 seconds.
-  path: Assets/Palette.prefab
-  artifactKey: Guid(b2e3c0035580bfb4da5393db2228a782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette.prefab using Guid(b2e3c0035580bfb4da5393db2228a782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd52441f32ec69ff539fe30edab63c0f') in 0.024635 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 11.458837 seconds.
-  path: Assets/New Palette.prefab
-  artifactKey: Guid(30a99e3f406df0840bfabc41c1648554) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Palette.prefab using Guid(30a99e3f406df0840bfabc41c1648554) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'decfb8ea9d01ffb319fd7dbb700f5cad') in 0.025849 seconds
+  artifactKey: Guid(647fbc5bf15c9f143a7f56203e0e716d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette.prefab using Guid(647fbc5bf15c9f143a7f56203e0e716d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85679e76f61abac5aeb79e1009b3714b') in 0.124397 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 13
+========================================================================
+Received Prepare
+Default GameObject BitMask: Water already registered
+Refreshing native plugins compatible for Editor in 14.70 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (0.8 KB). Loaded Objects now: 4630.
+Memory consumption went from 81.3 MB to 81.3 MB.
+Total: 6.147700 ms (FindLiveObjects: 0.292900 ms CreateObjectMapping: 0.164100 ms MarkObjects: 5.663800 ms  DeleteObjects: 0.025900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
