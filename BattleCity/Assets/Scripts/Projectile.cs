@@ -33,6 +33,11 @@ public class Projectile : MonoBehaviour
     {
         rb2d.velocity = Vector2.zero; // stop cannonball on impact
         tilemap = collision.gameObject.GetComponent<Tilemap>(); 
+        if (collision.gameObject.GetComponent<Health>() != null)
+        {
+            collision.gameObject.GetComponent<Health>().TakeDamage();
+        }
+
         if ((collision.gameObject == brickGameObject) || (destroySteel && collision.gameObject == steelGameObject))
         {
             Vector3 hitPosition = Vector3.zero;
@@ -46,7 +51,7 @@ public class Projectile : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    void onDisable()
+    void OnDisable()
     {
         if (toBeDestroyed)
         {
