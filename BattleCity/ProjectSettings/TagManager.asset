@@ -19,10 +19,10 @@ TagManager:
   - UI
   - Brick
   - Boundary
-  - 
-  - 
-  - 
-  - 
+  - PlayerTank
+  - PlayerProjectile
+  - EnemyTank
+  - EnemyProjectile
   - 
   - 
   - 
