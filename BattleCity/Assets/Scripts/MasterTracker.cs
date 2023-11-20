@@ -7,7 +7,7 @@ public class MasterTracker : MonoBehaviour
     static MasterTracker instance=null;
     
     public static int smallTankDestroyed, fastTankDestroyed, bigTankDestroyed, armoredTankDestroyed;
-    public static int levelNumber;
+    public static int stageNumber;
     public static int playerLives = 3;
     public static int playerScore = 0;
 

@@ -10,6 +10,8 @@ TagManager:
   - Fast
   - Big
   - Armored
+  - EnemySpawnPoint
+  - PlayerSpawnPoint
   layers:
   - Default
   - TransparentFX

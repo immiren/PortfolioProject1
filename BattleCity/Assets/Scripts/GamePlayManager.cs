@@ -7,20 +7,73 @@ using TMPro; //for text
 public class GamePlayManager : MonoBehaviour
 {
     [SerializeField] Image topCurtain, bottomCurtain, blackCurtain;
-    [SerializeField] TextMeshProUGUI stageNumberText;
+    [SerializeField] TextMeshProUGUI stageNumberText, gameOverText;
     [SerializeField] RectTransform canvas;
+    GameObject[] spawnPoints, spawnPlayerPoints;
+    bool stageStart = false;
 
     void Start()
     {
+        stageNumberText.text = "STAGE " + MasterTracker.stageNumber.ToString();
+        stageStart = true;
+        spawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
+        spawnPlayerPoints = GameObject.FindGameObjectsWithTag("PlayerSpawnPoint");
         StartCoroutine(StartStage());
+        //StartCoroutine(GameOver());
     }
-
     IEnumerator StartStage()
     {
         StartCoroutine(RevealStageNumber());
         yield return new WaitForSeconds(5);
         StartCoroutine(RevealTopStage());
         StartCoroutine(RevealBottomStage());
+        yield return null;
+        InvokeRepeating("SpawnEnemy", LevelManager.spawnRate, LevelManager.spawnRate);
+        SpawnPlayer();
+    }
+
+    public void SpawnPlayer()
+    {
+        if (MasterTracker.playerLives > 0)
+        {
+            if (!stageStart)
+            {
+                MasterTracker.playerLives--;
+            }
+            stageStart = false;
+            Animator anim = spawnPlayerPoints[0].GetComponent<Animator>();
+            anim.SetTrigger("Spawning");
+        }
+        else
+        {
+            StartCoroutine(GameOver());
+        }
+    }
+
+    public void SpawnEnemy()
+    {
+        if (LevelManager.smallTanks + LevelManager.fastTanks + LevelManager.bigTanks > 0)
+        {
+            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+            Debug.Log("Spawnpoints found: " + spawnPoints.Length);
+            Debug.Log("Spawning at " + spawnPointIndex);
+            Animator anim = spawnPoints[spawnPointIndex].GetComponent<Animator>();
+            anim.SetTrigger("Spawning");
+        }
+        else
+        {
+            CancelInvoke();
+        }
+    }
+
+
+    public IEnumerator GameOver()
+    {
+        while (gameOverText.rectTransform.localPosition.y < 0)
+        {
+            gameOverText.rectTransform.localPosition = new Vector3(gameOverText.rectTransform.localPosition.x, gameOverText.rectTransform.localPosition.y + 120f * Time.deltaTime, gameOverText.rectTransform.localPosition.z);
+            yield return null;
+        }
     }
 
     IEnumerator RevealStageNumber()

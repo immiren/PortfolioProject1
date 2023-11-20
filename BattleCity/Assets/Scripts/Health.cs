@@ -33,8 +33,9 @@ public class Health : MonoBehaviour
     }
 
     void Death(){
+        GamePlayManager GPM = GameObject.Find("Canvas").GetComponent<GamePlayManager>();
         if (gameObject.CompareTag("Player")){
-            //spawn player
+            GPM.SpawnPlayer();
         }else{ // add stats for destroyed tanks
             if (gameObject.CompareTag("Small")) MasterTracker.smallTankDestroyed++;
             else if (gameObject.CompareTag("Fast")) MasterTracker.fastTankDestroyed++;
