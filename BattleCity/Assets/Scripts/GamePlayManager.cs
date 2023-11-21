@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; //for text 
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GamePlayManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GamePlayManager : MonoBehaviour
     [SerializeField] RectTransform canvas;
     GameObject[] spawnPoints, spawnPlayerPoints;
     bool stageStart = false;
+    bool tankReserveEmpty = false;
 
     void Start()
     {
@@ -20,6 +22,20 @@ public class GamePlayManager : MonoBehaviour
         spawnPlayerPoints = GameObject.FindGameObjectsWithTag("PlayerSpawnPoint");
         StartCoroutine(StartStage());
         //StartCoroutine(GameOver());
+    }
+
+    private void Update()
+    {
+        if (tankReserveEmpty && GameObject.FindWithTag("Small") == null && GameObject.FindWithTag("Fast") == null && GameObject.FindWithTag("Big") == null)
+        {
+            MasterTracker.stageCleared = true;
+            LevelCompleted();
+        }
+    }
+    private void LevelCompleted()
+    {
+        tankReserveEmpty = false;
+        SceneManager.LoadScene("Score");
     }
     IEnumerator StartStage()
     {
@@ -55,14 +71,15 @@ public class GamePlayManager : MonoBehaviour
         if (LevelManager.smallTanks + LevelManager.fastTanks + LevelManager.bigTanks > 0)
         {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-            Debug.Log("Spawnpoints found: " + spawnPoints.Length);
-            Debug.Log("Spawning at " + spawnPointIndex);
+            //Debug.Log("Spawnpoints found: " + spawnPoints.Length);
+            //Debug.Log("Spawning at " + spawnPointIndex);
             Animator anim = spawnPoints[spawnPointIndex].GetComponent<Animator>();
             anim.SetTrigger("Spawning");
         }
         else
         {
             CancelInvoke();
+            tankReserveEmpty = true;
         }
     }
 
@@ -74,6 +91,8 @@ public class GamePlayManager : MonoBehaviour
             gameOverText.rectTransform.localPosition = new Vector3(gameOverText.rectTransform.localPosition.x, gameOverText.rectTransform.localPosition.y + 120f * Time.deltaTime, gameOverText.rectTransform.localPosition.z);
             yield return null;
         }
+        MasterTracker.stageCleared = false;
+        LevelCompleted();
     }
 
     IEnumerator RevealStageNumber()

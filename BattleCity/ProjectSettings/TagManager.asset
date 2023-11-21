@@ -12,6 +12,8 @@ TagManager:
   - Armored
   - EnemySpawnPoint
   - PlayerSpawnPoint
+  - EnemyProjectile
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX
