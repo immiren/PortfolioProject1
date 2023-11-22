@@ -6,6 +6,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] int actualHealth = 1;
     int currentHealth;
+    Animator anim;
+    Rigidbody2D rb2d;
 
     void Start()
     {
@@ -13,6 +15,8 @@ public class Health : MonoBehaviour
         else if (gameObject.CompareTag("Big")) actualHealth = 3;
         else if (gameObject.CompareTag("Armored")) actualHealth = 4;
         SetHealth();
+        anim = GetComponent<Animator>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage()
@@ -20,7 +24,8 @@ public class Health : MonoBehaviour
         currentHealth--;
         if (currentHealth <= 0)
         {
-            Death();
+            rb2d.velocity = Vector2.zero;
+            anim.SetTrigger("killed");
         }
     }
     public void SetHealth()
