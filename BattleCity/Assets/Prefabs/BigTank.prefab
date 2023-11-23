@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1623551416407093468}
   m_Layer: 10
   m_Name: BigTank
-  m_TagString: Small
+  m_TagString: Big
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

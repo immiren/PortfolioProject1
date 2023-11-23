@@ -141,7 +141,7 @@ MonoBehaviour:
   smallTanksITL: 1
   fastTanksITL: 1
   bigTanksITL: 1
-  stageNumber: 0
+  stageNumber: 1
   spawnRateInThisLevel: 5
 --- !u!1 &1400136633701610305
 GameObject:

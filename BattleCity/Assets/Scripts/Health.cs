@@ -30,6 +30,9 @@ public class Health : MonoBehaviour
     }
     public void SetHealth()
     {
+        if (gameObject.CompareTag("Fast")) actualHealth = 2;
+        else if (gameObject.CompareTag("Big")) actualHealth = 3;
+        else if (gameObject.CompareTag("Armored")) actualHealth = 4;
         currentHealth = actualHealth;
     }
     public void SetInvincible()
@@ -42,10 +45,10 @@ public class Health : MonoBehaviour
         if (gameObject.CompareTag("Player")){
             GPM.SpawnPlayer();
         }else{ // add stats for destroyed tanks
-            if (gameObject.CompareTag("Small")) MasterTracker.smallTankDestroyed++;
-            else if (gameObject.CompareTag("Fast")) MasterTracker.fastTankDestroyed++;
-            else if (gameObject.CompareTag("Big")) MasterTracker.bigTankDestroyed++;
-            else if (gameObject.CompareTag("Armored")) MasterTracker.armoredTankDestroyed++;
+            if (gameObject.CompareTag("Small")) MasterTracker.smallTanksDestroyed++;
+            else if (gameObject.CompareTag("Fast")) MasterTracker.fastTanksDestroyed++;
+            else if (gameObject.CompareTag("Big")) MasterTracker.bigTanksDestroyed++;
+            else if (gameObject.CompareTag("Armored")) MasterTracker.armoredTanksDestroyed++;
         }
         Destroy(gameObject);
     }

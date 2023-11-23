@@ -132,6 +132,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4864691698248732748, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
+      propertyPath: bigTanksITL
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864691698248732748, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
+      propertyPath: stageNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864691698248732748, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
+      propertyPath: fastTanksITL
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864691698248732748, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
+      propertyPath: smallTanksITL
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864691698248732748, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
+      propertyPath: spawnRateInThisLevel
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6480331654152390366, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_Name
       value: StageEssential

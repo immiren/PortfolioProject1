@@ -128,10 +128,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1031098619364513078, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6480331654152390366, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_Name
       value: StageEssential
