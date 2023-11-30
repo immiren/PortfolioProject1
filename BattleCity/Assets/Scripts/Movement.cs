@@ -9,6 +9,8 @@ public abstract class Movement : MonoBehaviour
 {
     public int speed = 5;
     protected bool isMoving = false;
+    //EnemyAI enemy;
+
     protected IEnumerator MoveHorizontal(float movementHorizontal, Rigidbody2D rb2d)
     {
         isMoving = true;
@@ -31,6 +33,7 @@ public abstract class Movement : MonoBehaviour
 
             if (movementProgress == 1) endPos = new Vector2(Mathf.Round(endPos.x), endPos.y); // ensures clean end point yea
             rb2d.MovePosition(endPos);
+            //if (enemy != null) { enemy.ResetTriedDirection(); }
             yield return new WaitForFixedUpdate();
         }
 
