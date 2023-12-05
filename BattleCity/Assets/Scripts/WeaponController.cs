@@ -8,24 +8,17 @@ public class WeaponController : MonoBehaviour
     GameObject cannonBall;
     Projectile cannon;
     [SerializeField] int speed = 1;
-    // Start is called before the first frame update
-    void Start()
+    private float nextShot = 0.15f;
+    [SerializeField] private float fireDelay = 0.5f;
+    public void Fire() // changed from if projectile doesnt exist to cooldown. change from setactive to instantiate?
     {
-        cannonBall = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-        cannon = cannonBall.GetComponent<Projectile>();
-        cannon.speed = speed;
-    }
-    public void Fire()
-    {
-        if (cannonBall.activeSelf == false)
+        if (Time.time > nextShot)
         {
-            cannonBall.transform.position = transform.position;
-            cannonBall.transform.rotation = transform.rotation;
-            cannonBall.SetActive(true);
+            cannonBall = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+            cannon = cannonBall.GetComponent<Projectile>();
+            cannon.speed = speed;
+            nextShot = Time.time + fireDelay;
         }
     }
-    private void OnDestroy()
-    {
-        if (cannonBall != null) cannon.DestroyProjectile();
-    }
+    //if (cannonBall.activeSelf == false)
 }

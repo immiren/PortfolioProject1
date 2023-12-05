@@ -8,17 +8,18 @@ public class Projectile : MonoBehaviour
     GameObject brickGameObject, steelGameObject;
     Tilemap tilemap;
 
-    [SerializeField] bool toBeDestroyed = false;
     public bool destroySteel = false;
 
     public int speed = 1;
     Rigidbody2D rb2d;
-    void Start ()
+    Eagle eagle;
+    void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.velocity = transform.up * speed;
         brickGameObject = GameObject.FindGameObjectWithTag("Brick");
         steelGameObject = GameObject.FindGameObjectWithTag("Steel");
+        eagle = GetComponent<Eagle>();
     }
 
     private void OnEnable()
@@ -29,10 +30,10 @@ public class Projectile : MonoBehaviour
         }
     }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         rb2d.velocity = Vector2.zero; // stop cannonball on impact
-        tilemap = collision.gameObject.GetComponent<Tilemap>(); 
+        tilemap = collision.gameObject.GetComponent<Tilemap>();
         if (collision.gameObject.GetComponent<Health>() != null)
         {
             collision.gameObject.GetComponent<Health>().TakeDamage();
@@ -48,23 +49,12 @@ public class Projectile : MonoBehaviour
                 tilemap.SetTile(tilemap.WorldToCell(hitPosition), null);
             }
         }
-        this.gameObject.SetActive(false);
-    }
 
-    void OnDisable()
-    {
-        if (toBeDestroyed)
+        if (collision.gameObject.GetComponent<Eagle>() != null)
         {
-            Destroy(this.gameObject);
+            Debug.Log("Eagle hit.");
+            eagle.EagleHit();
         }
-    }
-    
-    public void DestroyProjectile()
-    {
-        if (gameObject.activeSelf == false)
-        {
-            Destroy(this.gameObject);
-        }
-        toBeDestroyed = true;
+        Destroy(this.gameObject);
     }
 }
