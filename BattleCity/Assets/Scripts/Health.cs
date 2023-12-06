@@ -5,9 +5,10 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int actualHealth = 1;
-    int currentHealth;
+    public int currentHealth;
     Animator anim;
     Rigidbody2D rb2d;
+    public bool isShieldActive = false;
 
     void Start()
     {
@@ -21,6 +22,11 @@ public class Health : MonoBehaviour
 
     public void TakeDamage()
     {
+        if (isShieldActive)
+        {
+            isShieldActive = false;
+            return;
+        }
         currentHealth--;
         if (currentHealth <= 0)
         {
@@ -51,5 +57,9 @@ public class Health : MonoBehaviour
             else if (gameObject.CompareTag("Armored")) MasterTracker.armoredTanksDestroyed++;
         }
         Destroy(gameObject);
+    }
+    public void SetShield()
+    {
+        isShieldActive = true;
     }
 }

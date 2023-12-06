@@ -9,6 +9,7 @@ public abstract class Movement : MonoBehaviour
 {
     public int speed = 5;
     protected bool isMoving = false;
+    public int increase = 5;
     //EnemyAI enemy;
 
     protected IEnumerator MoveHorizontal(float movementHorizontal, Rigidbody2D rb2d)
@@ -74,5 +75,10 @@ public abstract class Movement : MonoBehaviour
         }
 
         isMoving = false;
+    }
+
+    public void SetSpeed()
+    {
+        speed += increase;
     }
 }

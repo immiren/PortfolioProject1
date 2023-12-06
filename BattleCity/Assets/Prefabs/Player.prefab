@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 969047434209529167}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  increase: 5
 --- !u!50 &1520160011020624144
 Rigidbody2D:
   serializedVersion: 4
@@ -139,6 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actualHealth: 1
+  currentHealth: 0
+  isShieldActive: 0
 --- !u!95 &9212291369057602119
 Animator:
   serializedVersion: 7
@@ -207,6 +210,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9198536491473740250, guid: ce2879800aa02a241a564e72595dc94f, type: 3}
   speed: 10
+  fireDelay: 0.5
+  isDoubleBullets: 0
 --- !u!1 &7279967019056583422
 GameObject:
   m_ObjectHideFlags: 0

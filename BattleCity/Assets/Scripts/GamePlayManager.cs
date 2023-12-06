@@ -71,8 +71,6 @@ public class GamePlayManager : MonoBehaviour
         if (LevelManager.smallTanks + LevelManager.fastTanks + LevelManager.bigTanks > 0)
         {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-            //Debug.Log("Spawnpoints found: " + spawnPoints.Length);
-            //Debug.Log("Spawning at " + spawnPointIndex);
             Animator anim = spawnPoints[spawnPointIndex].GetComponent<Animator>();
             anim.SetTrigger("Spawning");
         }
