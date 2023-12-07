@@ -39,6 +39,8 @@ public class Spawner : MonoBehaviour
             if (tankID == (int)tankType.smallTank) LevelManager.smallTanks--;
             else if (tankID == (int)tankType.fastTank) LevelManager.fastTanks--;
             else if (tankID == (int)tankType.bigTank) LevelManager.bigTanks--;
+            GamePlayManager GPM = GameObject.Find("Canvas").GetComponent<GamePlayManager>();
+            GPM.RemoveTankReserve();
         }
         else
         {

@@ -13,6 +13,9 @@ public class GamePlayManager : MonoBehaviour
     GameObject[] spawnPoints, spawnPlayerPoints;
     bool stageStart = false;
     bool tankReserveEmpty = false;
+    [SerializeField] Transform tankReservePanel;
+    [SerializeField] TextMeshProUGUI playerLivesText, stageNumber;
+    GameObject tankImage;
 
     void Start()
     {
@@ -20,8 +23,10 @@ public class GamePlayManager : MonoBehaviour
         stageStart = true;
         spawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
         spawnPlayerPoints = GameObject.FindGameObjectsWithTag("PlayerSpawnPoint");
+        UpdateTankReserve();
+        UpdatePlayerLives();
+        UpdateStageNumber();
         StartCoroutine(StartStage());
-        //StartCoroutine(GameOver());
     }
 
     private void Update()
@@ -122,5 +127,29 @@ public class GamePlayManager : MonoBehaviour
             bottomCurtain.rectTransform.Translate(new Vector3(0, -500 * Time.deltaTime, 0));
             yield return null;
         }
+    }
+
+    void UpdateTankReserve()
+    {
+        int j;
+        int numberOfTanks = LevelManager.smallTanks + LevelManager.fastTanks + LevelManager.bigTanks;
+        for (j = 0; j < numberOfTanks; j++)
+        {
+            tankImage = tankReservePanel.transform.GetChild(j).gameObject;
+            tankImage.SetActive(false);
+        }
+    }
+    public void RemoveTankReserve()
+    {
+        int numberOfTanks = LevelManager.smallTanks + LevelManager.fastTanks + LevelManager.bigTanks;
+        tankImage = tankReservePanel.transform.GetChild(numberOfTanks).gameObject;
+        tankImage.SetActive(false);
+    }
+    public void UpdatePlayerLives(){
+        playerLivesText.text = MasterTracker.playerLives.ToString();
+    }
+    public void UpdateStageNumber()
+    {
+        stageNumber.text = MasterTracker.stageNumber.ToString();
     }
 }
