@@ -62,6 +62,7 @@ public class GamePlayManager : MonoBehaviour
                 MasterTracker.playerLives--;
             }
             stageStart = false;
+            UpdatePlayerLives();
             Animator anim = spawnPlayerPoints[0].GetComponent<Animator>();
             anim.SetTrigger("Spawning");
         }

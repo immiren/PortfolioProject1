@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Check for horizontal or vertical movement input, and apply possible rotation.
-//Works for player and enemy tanks
 
 public abstract class Movement : MonoBehaviour
 {
     public int speed = 5;
     protected bool isMoving = false;
     public int increase = 5;
-    //EnemyAI enemy;
 
     protected IEnumerator MoveHorizontal(float movementHorizontal, Rigidbody2D rb2d)
     {
@@ -34,10 +31,8 @@ public abstract class Movement : MonoBehaviour
 
             if (movementProgress == 1) endPos = new Vector2(Mathf.Round(endPos.x), endPos.y); // ensures clean end point yea
             rb2d.MovePosition(endPos);
-            //if (enemy != null) { enemy.ResetTriedDirection(); }
             yield return new WaitForFixedUpdate();
         }
-
         isMoving = false;
     }
     protected IEnumerator MoveVertical(float movementVertical, Rigidbody2D rb2d)
@@ -73,7 +68,6 @@ public abstract class Movement : MonoBehaviour
             rb2d.MovePosition(endPos);
             yield return new WaitForFixedUpdate();
         }
-
         isMoving = false;
     }
 

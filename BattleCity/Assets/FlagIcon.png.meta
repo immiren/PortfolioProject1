@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b53551b620e32fd40a292b9de579f66d
+guid: 0b1a87c2c6f03e5409aba0fe5481a140
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 438812146328273895
-    second: PLivesIcon_0
+      213: 8286451559142381557
+    second: FlagIcon_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,12 +98,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PLivesIcon_0
+      name: FlagIcon_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 0
-        width: 128
+        width: 82
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e306097259f61600800000000000000
-      internalID: 438812146328273895
+      spriteID: 5f7d92f1ac36ff270800000000000000
+      internalID: 8286451559142381557
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PLivesIcon_0: 438812146328273895
+      FlagIcon_0: 8286451559142381557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

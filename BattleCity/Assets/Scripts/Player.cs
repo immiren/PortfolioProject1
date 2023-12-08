@@ -27,5 +27,6 @@ public class Player : Movement
     {
         if (h != 0 && !isMoving) StartCoroutine(MoveHorizontal(h,rb2d));
         else if (v != 0 && !isMoving) StartCoroutine(MoveVertical(v,rb2d));
+        if (!isMoving) { rb2d.velocity = Vector3.zero; }
     }
 }
