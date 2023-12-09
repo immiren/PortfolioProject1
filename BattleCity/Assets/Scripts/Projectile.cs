@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
         rb2d.velocity = transform.up * speed;
         brickGameObject = GameObject.FindGameObjectWithTag("Brick");
         steelGameObject = GameObject.FindGameObjectWithTag("Steel");
-        eagle = GetComponent<Eagle>();
+        eagle = GameObject.FindGameObjectWithTag("Eagle").GetComponent<Eagle>();
     }
 
     private void OnEnable()
@@ -48,12 +48,6 @@ public class Projectile : MonoBehaviour
                 hitPosition.y = hit.point.y - 0.01f * hit.normal.y;
                 tilemap.SetTile(tilemap.WorldToCell(hitPosition), null);
             }
-        }
-
-        if (collision.gameObject.GetComponent<Eagle>() != null)
-        {
-            Debug.Log("Eagle hit.");
-            eagle.EagleHit();
         }
         Destroy(this.gameObject);
     }

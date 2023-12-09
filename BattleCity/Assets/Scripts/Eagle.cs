@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Eagle : MonoBehaviour
 {
-    public void EagleHit()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Hit!");
-        GetComponent<SpriteRenderer>().enabled = false;
-        transform.GetChild(0).gameObject.SetActive(true);
-        GamePlayManager GPM = GameObject.Find("Canvas").GetComponent<GamePlayManager>();
-        StartCoroutine(GPM.GameOver());
+        if (collision.gameObject.CompareTag("EnemyProjectile") || collision.gameObject.CompareTag("PlayerProjectile"))
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(true);
+            GamePlayManager GPM = GameObject.Find("Canvas").GetComponent<GamePlayManager>();
+            StartCoroutine(GPM.GameOver());
+        }
     }
 }

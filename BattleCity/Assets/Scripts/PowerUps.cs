@@ -22,18 +22,15 @@ public class PowerUps : MonoBehaviour
             {
                 Health playerHealth = collision.GetComponent<Health>();
                 playerHealth.SetShield();
-                Debug.Log("Shield On");
             }
             if (this.CompareTag("SpeedPU"))
             {
                 Movement playerMovement = collision.GetComponent<Movement>();
                 playerMovement.SetSpeed();
-                Debug.Log("Speed On");
             }
             if (this.CompareTag("BulletPU"))
             {
                 wc.isDoubleBullets = true;
-                Debug.Log("Bullets On");
             }
         }
         else
