@@ -134,7 +134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4813502715376081496, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4864691698248732748, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: bigTanksITL
@@ -158,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6216613955808417078, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6480331654152390366, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_Name
@@ -166,15 +166,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7107948180286608860, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7777926164059642358, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8619849539000878836, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8768689679453667761, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_LocalPosition.x

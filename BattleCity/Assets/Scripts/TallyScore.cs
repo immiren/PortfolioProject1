@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEditor.SearchService;
 
 public class TallyScore : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class TallyScore : MonoBehaviour
     int smallTankScore, fastTankScore, bigTankScore, armoredTankScore;
     MasterTracker masterTracker;
     int smallTankPointsWorth, fastTankPointsWorth, bigTankPointsWorth, armoredTankPointsWorth;
+    [SerializeField] int lastStageNumber = 2;
 
     void Start()
     {
@@ -61,7 +63,14 @@ public class TallyScore : MonoBehaviour
         if (MasterTracker.stageCleared)
         {
             ClearStatistics();
-            SceneManager.LoadScene("Stage" + (MasterTracker.stageNumber + 1));
+            if (MasterTracker.stageNumber != lastStageNumber)
+            {
+                SceneManager.LoadScene("Stage" + (MasterTracker.stageNumber + 1));
+            }
+            else
+            {
+                //loppuscene tähä
+            }
         }
         else
         {

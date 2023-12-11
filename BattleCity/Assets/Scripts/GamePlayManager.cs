@@ -137,7 +137,7 @@ public class GamePlayManager : MonoBehaviour
         for (j = 0; j < numberOfTanks; j++)
         {
             tankImage = tankReservePanel.transform.GetChild(j).gameObject;
-            tankImage.SetActive(false);
+            tankImage.SetActive(true);
         }
     }
     public void RemoveTankReserve()
