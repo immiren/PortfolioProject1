@@ -69,7 +69,7 @@ public class TallyScore : MonoBehaviour
             }
             else
             {
-                //loppuscene tähä
+                SceneManager.LoadScene("End");
             }
         }
         else
