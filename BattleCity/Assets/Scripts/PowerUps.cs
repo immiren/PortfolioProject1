@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class PowerUps : MonoBehaviour
 {
+    [SerializeField] GamePlayManager GPM;
+
+    private void Start()
+    {
+        GPM = GameObject.FindAnyObjectByType<Canvas>().GetComponent<GamePlayManager>();
+    }
+    public void SpawnPowerUp()
+    {
+        Animator anim = gameObject.GetComponent<Animator>();
+        anim.SetTrigger("Spawning");
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -22,16 +33,20 @@ public class PowerUps : MonoBehaviour
             {
                 Health playerHealth = collision.GetComponent<Health>();
                 playerHealth.SetShield();
+                GPM.isShield = true;
             }
             if (this.CompareTag("SpeedPU"))
             {
                 Movement playerMovement = collision.GetComponent<Movement>();
                 playerMovement.SetSpeed();
+                GPM.isSpeed = true;
             }
             if (this.CompareTag("BulletPU"))
             {
                 wc.isDoubleBullets = true;
+                GPM.isBullets = true;
             }
+            GPM.UpdatePowerUps();
         }
         else
         {

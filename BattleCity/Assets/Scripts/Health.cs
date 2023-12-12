@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     Animator anim;
     Rigidbody2D rb2d;
     public bool isShieldActive = false;
+    [SerializeField] GamePlayManager GPM;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class Health : MonoBehaviour
         SetHealth();
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+        GPM = GameObject.FindAnyObjectByType<Canvas>().GetComponent<GamePlayManager>();
     }
 
     public void TakeDamage()
@@ -25,6 +27,8 @@ public class Health : MonoBehaviour
         if (isShieldActive)
         {
             isShieldActive = false;
+            GPM.isShield = false;
+            GPM.UpdatePowerUps();
             return;
         }
         currentHealth--;
@@ -32,6 +36,7 @@ public class Health : MonoBehaviour
         {
             rb2d.velocity = Vector2.zero;
             anim.SetTrigger("killed");
+            if (gameObject.CompareTag("Player")) GPM.RemovePowerUps();
         }
     }
     public void SetHealth()

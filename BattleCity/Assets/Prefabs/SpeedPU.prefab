@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2391033153166928907}
   - component: {fileID: 6708282253740992394}
   - component: {fileID: 2813816660635508102}
+  - component: {fileID: 770742622087500585}
   m_Layer: 12
   m_Name: SpeedPU
   m_TagString: SpeedPU
@@ -204,3 +205,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b981f53bafbe78046b4f620a4025a5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GPM: {fileID: 0}
+--- !u!95 &770742622087500585
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723444472114323116}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58b17c42805330e4da1466da44a986b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

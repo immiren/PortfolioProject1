@@ -16,7 +16,8 @@ public class GamePlayManager : MonoBehaviour
     [SerializeField] Transform tankReservePanel;
     [SerializeField] TextMeshProUGUI playerLivesText, stageNumber;
     GameObject tankImage;
-
+    public bool isShield = false, isSpeed = false, isBullets = false;
+    [SerializeField] Image ShieldPUIcon, SpeedPUIcon, BulletsPUIcon;
     void Start()
     {
         stageNumberText.text = "STAGE " + MasterTracker.stageNumber.ToString();
@@ -51,6 +52,8 @@ public class GamePlayManager : MonoBehaviour
         yield return null;
         InvokeRepeating("SpawnEnemy", LevelManager.spawnRate, LevelManager.spawnRate);
         SpawnPlayer();
+        SpawnPowerUps();
+        RemovePowerUps();
     }
 
     public void SpawnPlayer()
@@ -62,6 +65,8 @@ public class GamePlayManager : MonoBehaviour
                 MasterTracker.playerLives--;
             }
             stageStart = false;
+            RemovePowerUps();
+            UpdatePowerUps();
             UpdatePlayerLives();
             Animator anim = spawnPlayerPoints[0].GetComponent<Animator>();
             anim.SetTrigger("Spawning");
@@ -152,5 +157,35 @@ public class GamePlayManager : MonoBehaviour
     public void UpdateStageNumber()
     {
         stageNumber.text = MasterTracker.stageNumber.ToString();
+    }
+
+    public void UpdatePowerUps()
+    {
+        if (isShield)   {ShieldPUIcon.enabled = true; }
+        else { ShieldPUIcon.enabled = false;}
+        if (isSpeed)    {SpeedPUIcon.enabled = true; }
+        else { SpeedPUIcon.enabled = false;}
+        if (isBullets)  {BulletsPUIcon.enabled = true; }
+        else { BulletsPUIcon.enabled = false; }
+    }
+    
+    public void RemovePowerUps()
+    {
+        isShield = false;
+        isSpeed = false;
+        isBullets = false;
+        UpdatePowerUps();
+    }
+
+    void SpawnPowerUps()
+    {
+        string[] powerUpTags = { "ShieldPU", "SpeedPU", "BulletPU" };
+        List<GameObject> powerUpList = new List<GameObject>();
+        foreach (string tag in powerUpTags)
+        {
+            GameObject[] powerUpsWithTag = GameObject.FindGameObjectsWithTag(tag);
+            powerUpList.AddRange(powerUpsWithTag);
+        }
+        foreach (GameObject powerUp in powerUpList) { powerUp.GetComponent<PowerUps>().SpawnPowerUp(); }
     }
 }
