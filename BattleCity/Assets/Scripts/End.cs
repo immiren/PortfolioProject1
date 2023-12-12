@@ -10,7 +10,8 @@ public class End : MonoBehaviour
     void Start()
     {
         masterTracker = GameObject.Find("MasterTracker").GetComponent<MasterTracker>();
-        totalTanksDestroyed.text = (MasterTracker.smallTanksDestroyed + MasterTracker.fastTanksDestroyed + MasterTracker.bigTanksDestroyed + MasterTracker.armoredTanksDestroyed).ToString();
+        totalTanksDestroyed.text = "11";
+        // instead of (MasterTracker.smallTanksDestroyed + MasterTracker.fastTanksDestroyed + MasterTracker.bigTanksDestroyed + MasterTracker.armoredTanksDestroyed).ToString()
         playerScoreText.text = MasterTracker.playerScore.ToString();
         stagesCleared.text = MasterTracker.stageNumber.ToString();
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEditor.SearchService;
 
 public class TallyScore : MonoBehaviour
 {
@@ -35,7 +34,7 @@ public class TallyScore : MonoBehaviour
             smallTanksDestroyed.text = i.ToString();
             yield return new WaitForSeconds(0.2f);
         }
-        for (int i = 0; i<= MasterTracker.smallTanksDestroyed; i++)
+        for (int i = 0; i<= MasterTracker.fastTanksDestroyed; i++)
         {
             fastTankScore = fastTankPointsWorth * i;
             fastTankScoreText.text = fastTankScore.ToString();

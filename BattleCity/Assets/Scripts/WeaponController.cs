@@ -11,7 +11,7 @@ public class WeaponController : MonoBehaviour
     private float nextShot = 0.15f;
     [SerializeField] private float fireDelay = 0.5f;
     public bool isDoubleBullets = false;
-    public void Fire() // changed from if projectile doesnt exist to cooldown. change from setactive to instantiate?
+    public void Fire()
     {
         if (Time.time > nextShot)
         {
