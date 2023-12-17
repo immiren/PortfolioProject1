@@ -12,14 +12,15 @@ public class TallyScore : MonoBehaviour
     MasterTracker masterTracker;
     int smallTankPointsWorth, fastTankPointsWorth, bigTankPointsWorth, armoredTankPointsWorth;
     [SerializeField] int lastStageNumber = 2;
-    [SerializeField] Image nextTank;
-    [SerializeField] TextMeshProUGUI nextText;
+    [SerializeField] Image nextTank, backTank;
+    [SerializeField] TextMeshProUGUI nextText, bankText;
     bool isReadyForNext = false;
+    int selection = 0;
+    [SerializeField] GameObject Buttons;
 
     void Start()
     {
-        nextTank.enabled = false;
-        nextText.enabled = false;
+        Buttons.SetActive(false);
         masterTracker = GameObject.Find("MasterTracker").GetComponent<MasterTracker>();
         smallTankPointsWorth = masterTracker.smallTankPointsWorth;
         fastTankPointsWorth = masterTracker.fastTankPointsWorth;
@@ -27,14 +28,28 @@ public class TallyScore : MonoBehaviour
         armoredTankPointsWorth = masterTracker.armoredTankPointsWorth;
         stageText.text = "STAGE " + MasterTracker.stageNumber;
         playerScoreText.text = MasterTracker.playerScore.ToString();
-        if (MasterTracker.playerScore > MasterTracker.highScore) { MasterTracker.highScore = MasterTracker.playerScore;}
         StartCoroutine(UpdateTankPoints());
     }
     private void Update()
     {
-        if (isReadyForNext && Input.GetKeyUp(KeyCode.Space))
+
+        if (isReadyForNext)
         {
-            NextStage();
+            if (Input.GetKeyDown(KeyCode.DownArrow) | Input.GetKeyDown(KeyCode.S))
+            {
+                selection = 1;
+                UpdateButtons();
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow) | Input.GetKeyDown(KeyCode.W))
+            {
+                selection = 0;
+                UpdateButtons();
+            }
+            if (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                if (selection == 0) { NextStage(); }
+                if (selection == 1) { SceneManager.LoadScene("StartMenu"); }
+            }
         }
     }
 
@@ -72,10 +87,14 @@ public class TallyScore : MonoBehaviour
         totalTanksDestroyed.text = (MasterTracker.smallTanksDestroyed + MasterTracker.fastTanksDestroyed + MasterTracker.bigTanksDestroyed + MasterTracker.armoredTanksDestroyed).ToString();
         MasterTracker.playerScore += (smallTankScore + fastTankScore + bigTankScore + armoredTankScore);
         playerScoreText.text = MasterTracker.playerScore.ToString();
+        if (MasterTracker.playerScore > MasterTracker.highScore) { MasterTracker.highScore = MasterTracker.playerScore; }
+        hiScoreText.text = MasterTracker.highScore.ToString();
         yield return new WaitForSeconds(1f);
-        nextTank.enabled = true;
-        nextText.enabled = true;
+        //nextTank.enabled = true;
+        //nextText.enabled = true;
         isReadyForNext = true;
+        Buttons.SetActive(true);
+        UpdateButtons();
     }
     void ClearStatistics()
     {
@@ -102,6 +121,19 @@ public class TallyScore : MonoBehaviour
         else
         {
             ClearStatistics();
+        }
+    }
+    void UpdateButtons()
+    {
+        if (selection == 0)
+        {
+            nextTank.enabled = true;
+            backTank.enabled = false;
+        }
+        else
+        {
+            nextTank.enabled = false;
+            backTank.enabled = true;
         }
     }
 }

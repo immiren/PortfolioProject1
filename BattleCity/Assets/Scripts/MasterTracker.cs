@@ -13,7 +13,7 @@ public class MasterTracker : MonoBehaviour
     public static int playerScore = 0;
     public static bool stageCleared = false;
     public static int stagesCleared = 0;
-    public static int highScore = 0;
+    public static int highScore;
 
     [SerializeField] int smallTankPoints = 100, fastTankPoints = 200, bigTankPoints = 300, armoredTankPoints = 400;
     public int smallTankPointsWorth { get { return smallTankPoints;}}
