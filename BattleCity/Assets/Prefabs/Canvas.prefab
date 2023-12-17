@@ -90,7 +90,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6459481657887096194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +126,15 @@ MonoBehaviour:
   stageNumberText: {fileID: 5618494701789751629}
   gameOverText: {fileID: 4357525618590061574}
   canvas: {fileID: 4875093238276666979}
+  tankReservePanel: {fileID: 0}
+  playerLivesText: {fileID: 0}
+  stageNumber: {fileID: 0}
+  isShield: 0
+  isSpeed: 0
+  isBullets: 0
+  ShieldPUIcon: {fileID: 0}
+  SpeedPUIcon: {fileID: 0}
+  BulletsPUIcon: {fileID: 0}
 --- !u!114 &4864691698248732748
 MonoBehaviour:
   m_ObjectHideFlags: 0

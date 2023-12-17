@@ -12,9 +12,14 @@ public class TallyScore : MonoBehaviour
     MasterTracker masterTracker;
     int smallTankPointsWorth, fastTankPointsWorth, bigTankPointsWorth, armoredTankPointsWorth;
     [SerializeField] int lastStageNumber = 2;
+    [SerializeField] Image nextTank;
+    [SerializeField] TextMeshProUGUI nextText;
+    bool isReadyForNext = false;
 
     void Start()
     {
+        nextTank.enabled = false;
+        nextText.enabled = false;
         masterTracker = GameObject.Find("MasterTracker").GetComponent<MasterTracker>();
         smallTankPointsWorth = masterTracker.smallTankPointsWorth;
         fastTankPointsWorth = masterTracker.fastTankPointsWorth;
@@ -22,7 +27,15 @@ public class TallyScore : MonoBehaviour
         armoredTankPointsWorth = masterTracker.armoredTankPointsWorth;
         stageText.text = "STAGE " + MasterTracker.stageNumber;
         playerScoreText.text = MasterTracker.playerScore.ToString();
+        if (MasterTracker.playerScore > MasterTracker.highScore) { MasterTracker.highScore = MasterTracker.playerScore;}
         StartCoroutine(UpdateTankPoints());
+    }
+    private void Update()
+    {
+        if (isReadyForNext && Input.GetKeyUp(KeyCode.Space))
+        {
+            NextStage();
+        }
     }
 
     IEnumerator UpdateTankPoints()
@@ -55,10 +68,25 @@ public class TallyScore : MonoBehaviour
             armoredTanksDestroyed.text = i.ToString();
             yield return new WaitForSeconds(0.2f);
         }
+        MasterTracker.totalTanksDestroyed += (MasterTracker.smallTanksDestroyed + MasterTracker.fastTanksDestroyed + MasterTracker.bigTanksDestroyed + MasterTracker.armoredTanksDestroyed);
         totalTanksDestroyed.text = (MasterTracker.smallTanksDestroyed + MasterTracker.fastTanksDestroyed + MasterTracker.bigTanksDestroyed + MasterTracker.armoredTanksDestroyed).ToString();
         MasterTracker.playerScore += (smallTankScore + fastTankScore + bigTankScore + armoredTankScore);
         playerScoreText.text = MasterTracker.playerScore.ToString();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
+        nextTank.enabled = true;
+        nextText.enabled = true;
+        isReadyForNext = true;
+    }
+    void ClearStatistics()
+    {
+        MasterTracker.smallTanksDestroyed = 0;
+        MasterTracker.fastTanksDestroyed = 0;
+        MasterTracker.bigTanksDestroyed = 0;
+        MasterTracker.armoredTanksDestroyed = 0;
+    }
+    public void NextStage()
+    {
+        isReadyForNext = false;
         if (MasterTracker.stageCleared)
         {
             ClearStatistics();
@@ -75,12 +103,5 @@ public class TallyScore : MonoBehaviour
         {
             ClearStatistics();
         }
-    }
-    void ClearStatistics()
-    {
-        MasterTracker.smallTanksDestroyed = 0;
-        MasterTracker.fastTanksDestroyed = 0;
-        MasterTracker.bigTanksDestroyed = 0;
-        MasterTracker.armoredTanksDestroyed = 0;
     }
 }

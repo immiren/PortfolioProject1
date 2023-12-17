@@ -8,7 +8,6 @@ public class Health : MonoBehaviour
     public int currentHealth;
     Animator anim;
     Rigidbody2D rb2d;
-    public bool isShieldActive = false;
     [SerializeField] GamePlayManager GPM;
 
     void Start()
@@ -24,9 +23,8 @@ public class Health : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (isShieldActive)
+        if (GPM.isShield)
         {
-            isShieldActive = false;
             GPM.isShield = false;
             GPM.UpdatePowerUps();
             return;
@@ -51,11 +49,12 @@ public class Health : MonoBehaviour
         currentHealth = 1000;
     }
 
-    void Death(){
+    void Death(){ // called by TankExploding animation
         GamePlayManager GPM = GameObject.Find("Canvas").GetComponent<GamePlayManager>();
         if (gameObject.CompareTag("Player")){
+            MasterTracker.playerLives--;
             GPM.SpawnPlayer();
-        }else{ // add stats for destroyed tanks
+        }else{
             if (gameObject.CompareTag("Small")) MasterTracker.smallTanksDestroyed++;
             else if (gameObject.CompareTag("Fast")) MasterTracker.fastTanksDestroyed++;
             else if (gameObject.CompareTag("Big")) MasterTracker.bigTanksDestroyed++;
@@ -65,6 +64,6 @@ public class Health : MonoBehaviour
     }
     public void SetShield()
     {
-        isShieldActive = true;
+        GPM.isShield = true;
     }
 }

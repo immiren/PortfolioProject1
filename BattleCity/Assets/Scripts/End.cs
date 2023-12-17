@@ -2,17 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class End : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI playerScoreText, totalTanksDestroyed, stagesCleared;
+    [SerializeField] TextMeshProUGUI playerScoreText, totalTanksDestroyed, stagesCleared, nextText;
+    [SerializeField] Image nextTank;
     MasterTracker masterTracker;
-    void Start()
+    bool isReadyToNext = false;
+
+void Start()
     {
+        isReadyToNext = false;
+        nextTank.enabled = false;
+        nextText.enabled = false;
         masterTracker = GameObject.Find("MasterTracker").GetComponent<MasterTracker>();
-        totalTanksDestroyed.text = "11";
-        // instead of (MasterTracker.smallTanksDestroyed + MasterTracker.fastTanksDestroyed + MasterTracker.bigTanksDestroyed + MasterTracker.armoredTanksDestroyed).ToString()
+        totalTanksDestroyed.text = MasterTracker.totalTanksDestroyed.ToString();
         playerScoreText.text = MasterTracker.playerScore.ToString();
-        stagesCleared.text = MasterTracker.stageNumber.ToString();
+        stagesCleared.text = MasterTracker.stagesCleared.ToString();
+        StartCoroutine(ShowContinueButton());
+    }
+
+    IEnumerator ShowContinueButton()
+    {
+        yield return new WaitForSeconds(2f);
+        nextTank.enabled = true;
+        nextText.enabled = true;
+        isReadyToNext = true;
+    }
+
+    private void Update()
+    {
+        if (isReadyToNext && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("StartMenu");
+        }
     }
 }

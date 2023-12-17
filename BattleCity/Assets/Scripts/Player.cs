@@ -22,7 +22,6 @@ public class Player : Movement
             wc.Fire();
         }
     }
-
     void FixedUpdate()
     {
         if (h != 0 && !isMoving) StartCoroutine(MoveHorizontal(h,rb2d));

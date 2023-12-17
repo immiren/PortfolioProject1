@@ -7,11 +7,12 @@ using TMPro;
 
 public class GamePlayManager : MonoBehaviour
 {
+    // The GPM handles UI elements and active power-ups as well as starting and ending scenes.
+
     [SerializeField] Image topCurtain, bottomCurtain, blackCurtain;
     [SerializeField] TextMeshProUGUI stageNumberText, gameOverText;
     [SerializeField] RectTransform canvas;
     GameObject[] spawnPoints, spawnPlayerPoints;
-    bool stageStart = false;
     bool tankReserveEmpty = false;
     [SerializeField] Transform tankReservePanel;
     [SerializeField] TextMeshProUGUI playerLivesText, stageNumber;
@@ -21,7 +22,6 @@ public class GamePlayManager : MonoBehaviour
     void Start()
     {
         stageNumberText.text = "STAGE " + MasterTracker.stageNumber.ToString();
-        stageStart = true;
         spawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
         spawnPlayerPoints = GameObject.FindGameObjectsWithTag("PlayerSpawnPoint");
         UpdateTankReserve();
@@ -41,12 +41,13 @@ public class GamePlayManager : MonoBehaviour
     private void LevelCompleted()
     {
         tankReserveEmpty = false;
+        MasterTracker.stagesCleared += 1;
         SceneManager.LoadScene("Score");
     }
     IEnumerator StartStage()
     {
         StartCoroutine(RevealStageNumber());
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         StartCoroutine(RevealTopStage());
         StartCoroutine(RevealBottomStage());
         yield return null;
@@ -58,13 +59,8 @@ public class GamePlayManager : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        if (MasterTracker.playerLives > 0)
+        if (MasterTracker.playerLives > 0) //changed from >= to >
         {
-            if (!stageStart)
-            {
-                MasterTracker.playerLives--;
-            }
-            stageStart = false;
             RemovePowerUps();
             UpdatePowerUps();
             UpdatePlayerLives();
@@ -73,6 +69,7 @@ public class GamePlayManager : MonoBehaviour
         }
         else
         {
+            UpdatePlayerLives();
             StartCoroutine(GameOver());
         }
     }
@@ -91,8 +88,6 @@ public class GamePlayManager : MonoBehaviour
             tankReserveEmpty = true;
         }
     }
-
-
     public IEnumerator GameOver()
     {
         while (gameOverText.rectTransform.localPosition.y < 0)
@@ -120,7 +115,7 @@ public class GamePlayManager : MonoBehaviour
         stageNumberText.enabled = false;
         while (topCurtain.rectTransform.position.y < moveTopUpMin)
         {
-            topCurtain.rectTransform.Translate(new Vector3(0, 500 * Time.deltaTime, 0));
+            topCurtain.rectTransform.Translate(new Vector3(0, 200 * Time.deltaTime, 0));
             yield return null;
         }
     }
@@ -130,7 +125,7 @@ public class GamePlayManager : MonoBehaviour
         float moveBottomDownMin = bottomCurtain.rectTransform.position.y - (canvas.rect.height / 2) - 10;
         while (bottomCurtain.rectTransform.position.y > moveBottomDownMin)
         {
-            bottomCurtain.rectTransform.Translate(new Vector3(0, -500 * Time.deltaTime, 0));
+            bottomCurtain.rectTransform.Translate(new Vector3(0, -200 * Time.deltaTime, 0));
             yield return null;
         }
     }

@@ -3419,6 +3419,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: StageEssential
       objectReference: {fileID: 0}
+    - target: {fileID: 6876671408224424198, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876671408224424198, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876671408224424198, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.14901961
+      objectReference: {fileID: 0}
     - target: {fileID: 7052035939892130712, guid: 3b82222b1746c6942a91e81363c155b9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

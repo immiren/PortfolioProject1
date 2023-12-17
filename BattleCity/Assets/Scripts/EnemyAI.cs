@@ -7,7 +7,6 @@ public class EnemyAI : Movement
     Rigidbody2D rb2d;
     float h, v;
     enum Direction { Up, Down, Left, Right }; // more readable than numbers yippee
-    Direction[] direction = { Direction.Up, Direction.Down, Direction.Left, Direction.Right };
     WeaponController wc;
     [SerializeField] LayerMask blockingLayer;
     void Start()
