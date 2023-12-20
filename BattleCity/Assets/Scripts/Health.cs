@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (GPM.isShield)
+        if (GPM.isShield && gameObject.CompareTag("Player"))
         {
             GPM.isShield = false;
             GPM.UpdatePowerUps();
